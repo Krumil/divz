@@ -1,5 +1,5 @@
 {
-	"name": "divz",
+	"name": "@krumil/divz",
 	"author": "Krumil",
 	"description": "A React UI component that lets you scroll, swipe & zoom through HTML elements on the 3D z-axis",
 	"private": false,
