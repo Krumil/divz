@@ -184,7 +184,11 @@ export const Divz: React.FC<DivzProps> = ({
 	};
 
 	const handleTouchStart = (event: React.TouchEvent<HTMLDivElement>) => {
-		if (event.target instanceof HTMLInputElement || event.target instanceof HTMLTextAreaElement) {
+		if (
+			event.target instanceof HTMLInputElement ||
+			event.target instanceof HTMLTextAreaElement ||
+			(event.target instanceof HTMLElement && event.target.classList.contains('clickable'))
+		) {
 			return;
 		}
 		setTouchStartY(event.touches[0].clientY);
@@ -192,7 +196,11 @@ export const Divz: React.FC<DivzProps> = ({
 
 	const handleTouchEnd = (event: React.TouchEvent<HTMLDivElement>) => {
 		setIsTransitioning(false);
-		if (event.target instanceof HTMLInputElement || event.target instanceof HTMLTextAreaElement || event.target instanceof HTMLSelectElement || event.target instanceof HTMLButtonElement || (event.target instanceof HTMLElement && event.target.isContentEditable)) {
+		if (
+			event.target instanceof HTMLInputElement ||
+			event.target instanceof HTMLTextAreaElement ||
+			(event.target instanceof HTMLElement && event.target.classList.contains('clickable'))
+		) {
 			return;
 		}
 		event.preventDefault();
@@ -203,7 +211,11 @@ export const Divz: React.FC<DivzProps> = ({
 			return;
 		}
 
-		if (event.target instanceof HTMLInputElement || event.target instanceof HTMLTextAreaElement) {
+		if (
+			event.target instanceof HTMLInputElement ||
+			event.target instanceof HTMLTextAreaElement ||
+			(event.target instanceof HTMLElement && event.target.classList.contains('clickable'))
+		) {
 			return;
 		}
 
